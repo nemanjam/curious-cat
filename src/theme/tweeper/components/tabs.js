@@ -42,7 +42,7 @@ export default ({ theme, attach, TAB }) => ({
     //--------
     wrapper: {
       flexDirection: "row",
-      padding: 8,
+      padding: 15,
       whiteSpace: "nowrap",
       "& svg, .material-icons": {
         marginRight: 4,
