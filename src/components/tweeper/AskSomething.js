@@ -13,6 +13,7 @@ import atoms from "../atoms";
 const { Typography, Icon } = atoms;
 
 const useStyles = makeStyles(theme => ({
+  root: { borderRadius: 0, boxShadow: "0px 0px" },
   textField: {
     width: "100%"
   },
@@ -24,7 +25,7 @@ const useStyles = makeStyles(theme => ({
 function AskSomething() {
   const classes = useStyles();
   return (
-    <Card className={classes.card}>
+    <Card className={classes.root}>
       <CardContent className={classes.cardContent}>
         <TextField
           id="filled-multiline-static"
