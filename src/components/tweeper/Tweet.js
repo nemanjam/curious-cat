@@ -1,16 +1,21 @@
-import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
-import ListItem from '@material-ui/core/ListItem';
-import Box from '@material-ui/core/Box';
-import atoms from '../atoms';
+import React from "react";
+import Grid from "@material-ui/core/Grid";
+import { makeStyles } from "@material-ui/core/styles";
+import ListItem from "@material-ui/core/ListItem";
+import Box from "@material-ui/core/Box";
+import atoms from "../atoms";
 
 const useStyles = makeStyles({
   root: {
-    padding: '1rem 10px',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
+    padding: "1rem 10px",
+    flexDirection: "column",
+    alignItems: "flex-start"
   },
+  verticalBar: {
+    height: "100%",
+    width: 3,
+    backgroundColor: "#657786"
+  }
 });
 
 const { Avatar, IconButton, Icon, Typography } = atoms;
@@ -26,9 +31,8 @@ function Tweet() {
             <Box
               display="flex"
               height="100%"
-              justifyContent="flex-end"
+              justifyContent="flex-start"
               alignItems="center"
-              minWidth={49}
             >
               <Icon light text>
                 cached
@@ -36,10 +40,39 @@ function Tweet() {
             </Box>
           </Grid>
           <Grid item>
-            <Typography light>You Retweeted</Typography>
+            <Typography bold inline>
+              MyUsername
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography>shared this post</Typography>
           </Grid>
         </Grid>
       </Box>
+
+      <Box mb="2em">
+        <Grid container spacing={2}>
+          <Grid item>
+            <div className={classes.verticalBar} />
+          </Grid>
+          <Grid item>
+            <Typography bold inline>
+              CuriousCat
+            </Typography>{" "}
+            <Typography light inline>
+              ·
+            </Typography>{" "}
+            <Typography light inline>
+              10d
+            </Typography>
+            <Typography>
+              Welcome to Curious Cat! We're happy to have you here 😻 Have fun
+              and be nice!
+            </Typography>
+          </Grid>
+        </Grid>
+      </Box>
+
       <Grid container spacing={3} wrap="nowrap">
         <Grid item>
           <Avatar
@@ -52,23 +85,20 @@ function Tweet() {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <Typography bold inline>
-                Dan Abramov
-              </Typography>{' '}
-              <Typography light inline>
-                @dan_abramov
-              </Typography>{' '}
+                MyUsername
+              </Typography>{" "}
               <Typography light inline>
                 ·
-              </Typography>{' '}
+              </Typography>{" "}
               <Typography light inline>
-                Dec 17
+                15d
               </Typography>
               <Typography>
-                In a way CSS is like Redux. You can learn the rules quickly. That may mislead you
-                into thinking. Trade same
+                In a way CSS is like Redux. You can learn the rules quickly.
+                That may mislead you into thinking. Trade same
               </Typography>
             </Grid>
-            <Grid item xs={12}>
+            <Grid container item justify="space-around" xs={12}>
               <Box ml="-12px" display="inline-flex" alignItems="center">
                 <IconButton>
                   <Icon light text>
@@ -98,13 +128,6 @@ function Tweet() {
                 <Typography light inline danger>
                   661
                 </Typography>
-              </Box>
-              <Box ml="32px" display="inline-flex" alignItems="center">
-                <IconButton>
-                  <Icon light text>
-                    email
-                  </Icon>
-                </IconButton>
               </Box>
             </Grid>
           </Grid>

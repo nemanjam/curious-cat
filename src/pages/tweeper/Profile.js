@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
 import Box from "@material-ui/core/Box";
 import { styled } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Header from "../../components/tweeper/Header";
 import Tweet from "../../components/tweeper/Tweet";
 import TrackWho from "../../components/tweeper/TrackWho";
@@ -27,7 +28,19 @@ const Feed = styled("div")({
   backgroundColor: "#fff"
 });
 
+const useStyles = makeStyles({
+  numbersFont: {
+    fontSize: "1.75em",
+    fontWeight: "300"
+  },
+  textNumbersFont: {
+    fontWeight: "350"
+  }
+});
+
 function Profile() {
+  const classes = useStyles();
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -35,7 +48,7 @@ function Profile() {
       <Content>
         <Grid container sm={12} style={{ marginBottom: 15 }}>
           <Grid
-            style={{ backgroundColor: "#ccd6dd" }}
+            style={{ backgroundColor: "#657786" }}
             item
             container
             direction="column"
@@ -53,15 +66,15 @@ function Profile() {
               />
             </Grid>
             <Grid item>
-              <Typography component="h1" primary inline gutterBottom>
+              <Typography inverted primary inline gutterBottom>
                 MyUsername
               </Typography>
-              <Icon text>edit</Icon>
+              <Icon text style={{ color: "white", marginLeft: 5 }}>
+                edit
+              </Icon>
             </Grid>
             <Grid item>
-              <Button variant="contained" className={""}>
-                Share
-              </Button>
+              <Button variant="contained">Share</Button>
             </Grid>
             <Box
               item
@@ -71,18 +84,28 @@ function Profile() {
             >
               <Grid container justify="space-around">
                 <Grid item>
-                  <Typography>Answers</Typography>
-                  <Typography component="" primary>
+                  <Typography inverted className={classes.textNumbersFont}>
+                    Answers
+                  </Typography>
+                  <Typography inverted className={classes.numbersFont}>
                     123
                   </Typography>
                 </Grid>
                 <Grid item>
-                  <Typography>Followers</Typography>
-                  <Typography>123</Typography>
+                  <Typography inverted className={classes.textNumbersFont}>
+                    Followers
+                  </Typography>
+                  <Typography inverted className={classes.numbersFont}>
+                    123
+                  </Typography>
                 </Grid>
                 <Grid item>
-                  <Typography>Following</Typography>
-                  <Typography>123</Typography>
+                  <Typography inverted className={classes.textNumbersFont}>
+                    Following
+                  </Typography>
+                  <Typography inverted className={classes.numbersFont}>
+                    123
+                  </Typography>
                 </Grid>
               </Grid>
             </Box>
