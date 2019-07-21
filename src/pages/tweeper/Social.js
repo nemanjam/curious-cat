@@ -61,7 +61,7 @@ const useStyles = makeStyles({
   }
 });
 
-function Profile() {
+function Social() {
   const classes = useStyles();
 
   return (
@@ -69,12 +69,8 @@ function Profile() {
       <CssBaseline />
       <Header />
       <Content>
-        <ProfileHeader />
         <Grid container spacing={2}>
           <Grid item sm={4}>
-            <Box mb="10px">
-              <AskSomething />
-            </Box>
             <Box mb="10px">
               <TrackWho />
             </Box>
@@ -94,4 +90,4 @@ function Profile() {
   );
 }
 
-export default withTheme(theme)(Profile);
+export default withTheme(theme)(Social);

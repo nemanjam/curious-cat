@@ -9,7 +9,9 @@ const useStyles = makeStyles({
   root: {
     padding: "1rem 10px",
     flexDirection: "column",
-    alignItems: "flex-start"
+    alignItems: "flex-start",
+    //marginBottom: "10px",
+    backgroundColor: "#fff"
   },
   verticalBar: {
     height: "100%",
@@ -20,83 +22,75 @@ const useStyles = makeStyles({
 
 const { Avatar, IconButton, Icon, Typography } = atoms;
 
-function Tweet() {
+function Tweet({ sharedBy, question, answer }) {
   const classes = useStyles();
 
   return (
     <ListItem button className={classes.root}>
-      <Box mb="5px">
-        <Grid container spacing={1}>
-          <Grid item>
-            <Box
-              display="flex"
-              height="100%"
-              justifyContent="flex-start"
-              alignItems="center"
-            >
-              <Icon light text>
-                cached
-              </Icon>
-            </Box>
-          </Grid>
-          <Grid item>
-            <Typography bold inline>
-              MyUsername
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography>shared this post</Typography>
-          </Grid>
-        </Grid>
-      </Box>
-
-      <Box mb="2em">
-        <Grid container spacing={2}>
-          <Grid item>
-            <div className={classes.verticalBar} />
-          </Grid>
-          <Grid item>
-            <Typography bold inline>
-              CuriousCat
-            </Typography>{" "}
-            <Typography light inline>
-              ·
-            </Typography>{" "}
-            <Typography light inline>
-              10d
-            </Typography>
-            <Typography>
-              Welcome to Curious Cat! We're happy to have you here 😻 Have fun
-              and be nice!
-            </Typography>
-          </Grid>
-        </Grid>
-      </Box>
-
-      <Grid container spacing={3} wrap="nowrap">
-        <Grid item>
-          <Avatar
-            medium
-            alt="Avatar"
-            src="https://pbs.twimg.com/profile_images/1096807971374448640/rVCDhxkG_200x200.png"
-          />
-        </Grid>
-        <Grid item>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
+      {sharedBy && (
+        <Box mb="5px">
+          <Grid container spacing={1}>
+            <Grid item>
+              <Box
+                display="flex"
+                height="100%"
+                justifyContent="flex-start"
+                alignItems="center"
+              >
+                <Icon light text>
+                  cached
+                </Icon>
+              </Box>
+            </Grid>
+            <Grid item>
               <Typography bold inline>
-                MyUsername
+                {sharedBy}
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography>shared this post</Typography>
+            </Grid>
+          </Grid>
+        </Box>
+      )}
+      {question && (
+        <Box mb="2em">
+          <Grid container spacing={2}>
+            <Grid item>
+              <div className={classes.verticalBar} />
+            </Grid>
+            <Grid item>
+              <Typography bold inline>
+                {question.username}
               </Typography>{" "}
               <Typography light inline>
                 ·
               </Typography>{" "}
               <Typography light inline>
-                15d
+                {question.time}
               </Typography>
-              <Typography>
-                In a way CSS is like Redux. You can learn the rules quickly.
-                That may mislead you into thinking. Trade same
+              <Typography>{question.text}</Typography>
+            </Grid>
+          </Grid>
+        </Box>
+      )}
+      <Grid container spacing={3} wrap="nowrap">
+        <Grid item>
+          <Avatar medium alt="Avatar" src={answer.avatar} />
+        </Grid>
+        <Grid item>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <Typography bold inline>
+                {answer.username}
+              </Typography>{" "}
+              <Typography light inline>
+                ·
+              </Typography>{" "}
+              <Typography light inline>
+                {answer.time}
               </Typography>
+              <Typography>{answer.text}</Typography>
             </Grid>
             <Grid container item justify="space-around" xs={12}>
               <Box ml="-12px" display="inline-flex" alignItems="center">
@@ -105,9 +99,6 @@ function Tweet() {
                     mode_comment
                   </Icon>
                 </IconButton>
-                <Typography light inline>
-                  24
-                </Typography>
               </Box>
               <Box ml="32px" display="inline-flex" alignItems="center">
                 <IconButton success>
@@ -115,9 +106,6 @@ function Tweet() {
                     cached
                   </Icon>
                 </IconButton>
-                <Typography light inline success>
-                  122
-                </Typography>
               </Box>
               <Box ml="32px" display="inline-flex" alignItems="center">
                 <IconButton danger>
@@ -126,7 +114,7 @@ function Tweet() {
                   </Icon>
                 </IconButton>
                 <Typography light inline danger>
-                  661
+                  {answer.likedCount}
                 </Typography>
               </Box>
             </Grid>
