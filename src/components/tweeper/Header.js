@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
-import TextField from "@material-ui/core/TextField";
-import Hidden from "@material-ui/core/Hidden";
-import ListItemText from "@material-ui/core/ListItemText";
+
 import atoms from "../atoms";
 import molecules from "../molecules";
 import { CuriousCatSvgIcon } from "./SvgIcons";
@@ -60,6 +58,8 @@ const Header = () => {
                 icon={<Icon>account_circle</Icon>}
               />
               <Tab
+                component={Link}
+                to="/inbox"
                 label="Inbox"
                 icon={
                   <Badge number badgeContent={1}>
@@ -68,6 +68,8 @@ const Header = () => {
                 }
               />
               <Tab
+                component={Link}
+                to="/notifications"
                 label="Notifications"
                 icon={
                   <Badge number badgeContent={2}>
