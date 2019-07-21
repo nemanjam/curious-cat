@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 
 const { Avatar, IconButton, Icon, Typography } = atoms;
 
-function Tweet({ sharedBy, question, answer }) {
+function Post({ sharedBy, question, answer }) {
   const classes = useStyles();
 
   return (
@@ -125,4 +125,4 @@ function Tweet({ sharedBy, question, answer }) {
   );
 }
 
-export default Tweet;
+export default Post;

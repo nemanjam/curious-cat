@@ -6,8 +6,8 @@ import Box from "@material-ui/core/Box";
 import { styled } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
 import Header from "../../components/tweeper/Header";
-import Tweet from "../../components/tweeper/Tweet";
-import TrackWho from "../../components/tweeper/TrackWho";
+import Post from "../../components/tweeper/Post";
+import WhoToFollow from "../../components/tweeper/WhoToFollow";
 import AskSomething from "../../components/tweeper/AskSomething";
 import ProfileHeader from "../../components/tweeper/ProfileHeader";
 import theme from "../../theme/tweeper/theme";
@@ -76,14 +76,14 @@ function Profile() {
               <AskSomething />
             </Box>
             <Box mb="10px">
-              <TrackWho />
+              <WhoToFollow />
             </Box>
           </Grid>
           <Grid item sm={8}>
             <Grid container direction="column" spacing={2}>
               {posts.map((post, index) => (
                 <Grid key={index} item>
-                  <Tweet {...post} />
+                  <Post {...post} />
                 </Grid>
               ))}
             </Grid>

@@ -6,9 +6,9 @@ import Box from "@material-ui/core/Box";
 import { styled } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
 import Header from "../../components/tweeper/Header";
-import Tweet from "../../components/tweeper/Tweet";
-import TrackWho from "../../components/tweeper/TrackWho";
-import AskSomething from "../../components/tweeper/AskSomething";
+import Post from "../../components/tweeper/Post";
+import WhoToFollow from "../../components/tweeper/WhoToFollow";
+import Options from "../../components/tweeper/Options";
 import ProfileHeader from "../../components/tweeper/ProfileHeader";
 import theme from "../../theme/tweeper/theme";
 import withTheme from "./withTheme";
@@ -70,16 +70,19 @@ function Social() {
       <Header />
       <Content>
         <Grid container spacing={2}>
-          <Grid item sm={4}>
-            <Box mb="10px">
-              <TrackWho />
-            </Box>
+          <Grid item container direction="column" spacing={2} sm={4}>
+            <Grid item>
+              <WhoToFollow />
+            </Grid>
+            <Grid item>
+              <Options />
+            </Grid>
           </Grid>
           <Grid item sm={8}>
             <Grid container direction="column" spacing={2}>
               {posts.map((post, index) => (
                 <Grid key={index} item>
-                  <Tweet {...post} />
+                  <Post {...post} />
                 </Grid>
               ))}
             </Grid>

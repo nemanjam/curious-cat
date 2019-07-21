@@ -34,7 +34,7 @@ const useStyles = makeStyles({
   refreshIcon: { marginTop: 4 }
 });
 
-function TrackWho() {
+function WhoToFollow() {
   const classes = useStyles();
 
   return (
@@ -66,4 +66,4 @@ function TrackWho() {
   );
 }
 
-export default TrackWho;
+export default WhoToFollow;
