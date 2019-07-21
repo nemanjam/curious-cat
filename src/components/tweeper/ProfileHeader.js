@@ -7,20 +7,23 @@ import atoms from "../atoms";
 const { Avatar, Icon, Typography, Button } = atoms;
 
 const useStyles = makeStyles({
+  root: { marginBottom: 15 },
+  avatar: { marginBottom: 9, marginTop: 10 },
   numbersFont: {
     fontSize: "1.75em",
     fontWeight: "300"
   },
   textNumbersFont: {
     fontWeight: "350"
-  }
+  },
+  captionGrid: { width: "100%", textAlign: "center" }
 });
 
 function ProfileHeader() {
   const classes = useStyles();
 
   return (
-    <Grid container sm={12} style={{ marginBottom: 15 }}>
+    <Grid container className={classes.root}>
       <Grid
         style={{ backgroundColor: "#657786" }}
         item
@@ -30,7 +33,7 @@ function ProfileHeader() {
       >
         <Grid item>
           <Avatar
-            style={{ marginBottom: 9, marginTop: 10 }}
+            className={classes.avatar}
             ultraLarge
             bordered
             alt="My profile"
@@ -50,39 +53,36 @@ function ProfileHeader() {
         <Grid item>
           <Button variant="contained">Share</Button>
         </Grid>
-        <Box
-          item
-          mt="5px"
-          mb="15px"
-          style={{ width: "100%", textAlign: "center" }}
-        >
-          <Grid container justify="space-around">
-            <Grid item>
-              <Typography inverted className={classes.textNumbersFont}>
-                Answers
-              </Typography>
-              <Typography inverted className={classes.numbersFont}>
-                123
-              </Typography>
+        <Grid item className={classes.captionGrid}>
+          <Box mt="5px" mb="15px">
+            <Grid container justify="space-around">
+              <Grid item>
+                <Typography inverted className={classes.textNumbersFont}>
+                  Answers
+                </Typography>
+                <Typography inverted className={classes.numbersFont}>
+                  123
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography inverted className={classes.textNumbersFont}>
+                  Followers
+                </Typography>
+                <Typography inverted className={classes.numbersFont}>
+                  123
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography inverted className={classes.textNumbersFont}>
+                  Following
+                </Typography>
+                <Typography inverted className={classes.numbersFont}>
+                  123
+                </Typography>
+              </Grid>
             </Grid>
-            <Grid item>
-              <Typography inverted className={classes.textNumbersFont}>
-                Followers
-              </Typography>
-              <Typography inverted className={classes.numbersFont}>
-                123
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography inverted className={classes.textNumbersFont}>
-                Following
-              </Typography>
-              <Typography inverted className={classes.numbersFont}>
-                123
-              </Typography>
-            </Grid>
-          </Grid>
-        </Box>
+          </Box>
+        </Grid>
       </Grid>
     </Grid>
   );
