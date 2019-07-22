@@ -35,12 +35,7 @@ const Header = ({ page }) => {
             </Avatar>
           </Grid>
           <Grid item sm={10}>
-            <Tabs
-              value={active}
-              onChange={(e, val) => {
-                console.log(val);
-              }}
-            >
+            <Tabs value={active} textColor="primary">
               <Tab
                 component={Link}
                 to="/"

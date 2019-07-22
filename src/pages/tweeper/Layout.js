@@ -6,6 +6,7 @@ import theme from "../../theme/tweeper/theme";
 import withTheme from "./withTheme";
 import Header from "../../components/tweeper/Header";
 import SmallHeader from "../../components/tweeper/SmallHeader";
+import BottomHeader from "../../components/tweeper/BottomHeader";
 
 const Layout = props => {
   return (
@@ -16,6 +17,9 @@ const Layout = props => {
       </Hidden>
       <Hidden mdUp>
         <SmallHeader />
+      </Hidden>
+      <Hidden mdUp>
+        <BottomHeader page={props.page} />
       </Hidden>
       {props.children}
     </Fragment>
