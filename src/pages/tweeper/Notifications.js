@@ -5,6 +5,8 @@ import Divider from "@material-ui/core/Divider";
 import Box from "@material-ui/core/Box";
 import { styled } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
+import Hidden from "@material-ui/core/Hidden";
+
 import Header from "../../components/tweeper/Header";
 import Post from "../../components/tweeper/Post";
 import WhoToFollow from "../../components/tweeper/WhoToFollow";
@@ -49,15 +51,17 @@ function Notifications() {
   return (
     <Content>
       <Grid container spacing={2}>
-        <Grid item container direction="column" spacing={2} sm={4}>
-          <Grid item>
-            <WhoToFollow />
+        <Hidden smDown>
+          <Grid item container direction="column" spacing={2} md={4}>
+            <Grid item>
+              <WhoToFollow />
+            </Grid>
+            <Grid item>
+              <Options />
+            </Grid>
           </Grid>
-          <Grid item>
-            <Options />
-          </Grid>
-        </Grid>
-        <Grid item sm={8}>
+        </Hidden>
+        <Grid item md={8} sm={12} xs={12}>
           <Grid container direction="column" spacing={2}>
             {posts.map((post, index) => (
               <Grid key={index} item>

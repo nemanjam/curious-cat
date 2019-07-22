@@ -5,6 +5,8 @@ import Divider from "@material-ui/core/Divider";
 import Box from "@material-ui/core/Box";
 import { styled } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
+import Hidden from "@material-ui/core/Hidden";
+
 import Header from "../../components/tweeper/Header";
 import Post from "../../components/tweeper/Post";
 import WhoToFollow from "../../components/tweeper/WhoToFollow";
@@ -68,15 +70,17 @@ function Profile() {
     <Content>
       <ProfileHeader />
       <Grid container spacing={2}>
-        <Grid item sm={4}>
+        <Grid item md={4} sm={12} xs={12}>
           <Box mb="10px">
             <AskSomething />
           </Box>
-          <Box mb="10px">
-            <WhoToFollow />
-          </Box>
+          <Hidden smDown>
+            <Box mb="10px">
+              <WhoToFollow />
+            </Box>
+          </Hidden>
         </Grid>
-        <Grid item sm={8}>
+        <Grid item md={8} sm={12} xs={12}>
           <Grid container direction="column" spacing={2}>
             {posts.map((post, index) => (
               <Grid key={index} item>

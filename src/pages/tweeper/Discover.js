@@ -4,6 +4,8 @@ import { styled } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Paper from "@material-ui/core/Paper";
+import Hidden from "@material-ui/core/Hidden";
+
 import Post from "../../components/tweeper/Post";
 import WhoToFollow from "../../components/tweeper/WhoToFollow";
 import Options from "../../components/tweeper/Options";
@@ -69,15 +71,17 @@ function Discover() {
   return (
     <Content>
       <Grid container spacing={2}>
-        <Grid item container direction="column" spacing={2} sm={4}>
-          <Grid item>
-            <WhoToFollow />
+        <Hidden smDown>
+          <Grid item container direction="column" spacing={2} md={4}>
+            <Grid item>
+              <WhoToFollow />
+            </Grid>
+            <Grid item>
+              <Options />
+            </Grid>
           </Grid>
-          <Grid item>
-            <Options />
-          </Grid>
-        </Grid>
-        <Grid item sm={8}>
+        </Hidden>
+        <Grid item md={8} sm={12} xs={12}>
           <Grid container direction="column" spacing={2}>
             <Grid item>
               <Paper
@@ -91,6 +95,7 @@ function Discover() {
                   fullWidth
                   margin="normal"
                   InputProps={{
+                    disableUnderline: true,
                     startAdornment: (
                       <InputAdornment position="start">
                         <Icon>search</Icon>

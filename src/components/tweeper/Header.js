@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 
@@ -27,14 +27,12 @@ const Header = ({ page }) => {
       <Toolbar>
         <Grid container alignItems="center" spacing={2}>
           <Grid item sm={2}>
-            <ListItem>
-              <Avatar
-                alt="My profile"
-                style={{ backgroundColor: "white", marginTop: 9 }}
-              >
-                <CuriousCatSvgIcon style={{ color: "#657786" }} />
-              </Avatar>
-            </ListItem>
+            <Avatar
+              alt="My profile"
+              style={{ backgroundColor: "white", marginTop: 9 }}
+            >
+              <CuriousCatSvgIcon style={{ color: "#657786" }} />
+            </Avatar>
           </Grid>
           <Grid item sm={10}>
             <Tabs
