@@ -1,13 +1,9 @@
 import React from "react";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
-import Divider from "@material-ui/core/Divider";
-import Box from "@material-ui/core/Box";
 import { styled } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Paper from "@material-ui/core/Paper";
-import Header from "../../components/tweeper/Header";
 import Post from "../../components/tweeper/Post";
 import WhoToFollow from "../../components/tweeper/WhoToFollow";
 import Options from "../../components/tweeper/Options";
@@ -71,52 +67,48 @@ function Discover() {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <Header />
-      <Content>
-        <Grid container spacing={2}>
-          <Grid item container direction="column" spacing={2} sm={4}>
-            <Grid item>
-              <WhoToFollow />
-            </Grid>
-            <Grid item>
-              <Options />
-            </Grid>
+    <Content>
+      <Grid container spacing={2}>
+        <Grid item container direction="column" spacing={2} sm={4}>
+          <Grid item>
+            <WhoToFollow />
           </Grid>
-          <Grid item sm={8}>
-            <Grid container direction="column" spacing={2}>
-              <Grid item>
-                <Paper
-                  elevation={0}
-                  style={{ borderRadius: 0, paddingLeft: 8, paddingRight: 8 }}
-                >
-                  <TextField
-                    id="standard-full-width"
-                    style={{}}
-                    placeholder="Username"
-                    fullWidth
-                    margin="normal"
-                    InputProps={{
-                      startAdornment: (
-                        <InputAdornment position="start">
-                          <Icon>search</Icon>
-                        </InputAdornment>
-                      )
-                    }}
-                  />
-                </Paper>
-              </Grid>
-              {posts.map((post, index) => (
-                <Grid key={index} item>
-                  <Post {...post} />
-                </Grid>
-              ))}
-            </Grid>
+          <Grid item>
+            <Options />
           </Grid>
         </Grid>
-      </Content>
-    </React.Fragment>
+        <Grid item sm={8}>
+          <Grid container direction="column" spacing={2}>
+            <Grid item>
+              <Paper
+                elevation={0}
+                style={{ borderRadius: 0, paddingLeft: 8, paddingRight: 8 }}
+              >
+                <TextField
+                  id="standard-full-width"
+                  style={{}}
+                  placeholder="Username"
+                  fullWidth
+                  margin="normal"
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <Icon>search</Icon>
+                      </InputAdornment>
+                    )
+                  }}
+                />
+              </Paper>
+            </Grid>
+            {posts.map((post, index) => (
+              <Grid key={index} item>
+                <Post {...post} />
+              </Grid>
+            ))}
+          </Grid>
+        </Grid>
+      </Grid>
+    </Content>
   );
 }
 

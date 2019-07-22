@@ -9,8 +9,19 @@ import { CuriousCatSvgIcon } from "./SvgIcons";
 const { AppBar, Avatar, Badge, Icon, Toolbar } = atoms;
 const { Tabs, Tab, ListItem, InputAdornment } = molecules;
 
-const Header = () => {
-  const [index, setIndex] = useState(0);
+const Header = ({ page }) => {
+  const pages = [
+    "social",
+    "discover",
+    "communities",
+    "profile",
+    "inbox",
+    "notifications"
+  ];
+
+  let active = pages.indexOf(page);
+  active === -1 ? (active = 0) : (active = active);
+
   return (
     <AppBar position="sticky">
       <Toolbar>
@@ -27,10 +38,9 @@ const Header = () => {
           </Grid>
           <Grid item sm={10}>
             <Tabs
-              value={index}
+              value={active}
               onChange={(e, val) => {
                 console.log(val);
-                setIndex(val);
               }}
             >
               <Tab

@@ -51,31 +51,27 @@ function Inbox() {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <Header />
-      <Content>
-        <Grid container spacing={2}>
-          <Grid item container direction="column" spacing={2} sm={4}>
-            <Grid item>
-              <WhoToFollow />
-            </Grid>
-            <Grid item>
-              <Options />
-            </Grid>
+    <Content>
+      <Grid container spacing={2}>
+        <Grid item container direction="column" spacing={2} sm={4}>
+          <Grid item>
+            <WhoToFollow />
           </Grid>
-          <Grid item sm={8}>
-            <Grid container direction="column" spacing={2}>
-              {posts.map((post, index) => (
-                <Grid key={index} item>
-                  <Post {...post} />
-                </Grid>
-              ))}
-            </Grid>
+          <Grid item>
+            <Options />
           </Grid>
         </Grid>
-      </Content>
-    </React.Fragment>
+        <Grid item sm={8}>
+          <Grid container direction="column" spacing={2}>
+            {posts.map((post, index) => (
+              <Grid key={index} item>
+                <Post {...post} />
+              </Grid>
+            ))}
+          </Grid>
+        </Grid>
+      </Grid>
+    </Content>
   );
 }
 

@@ -65,32 +65,28 @@ function Profile() {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <Header />
-      <Content>
-        <ProfileHeader />
-        <Grid container spacing={2}>
-          <Grid item sm={4}>
-            <Box mb="10px">
-              <AskSomething />
-            </Box>
-            <Box mb="10px">
-              <WhoToFollow />
-            </Box>
-          </Grid>
-          <Grid item sm={8}>
-            <Grid container direction="column" spacing={2}>
-              {posts.map((post, index) => (
-                <Grid key={index} item>
-                  <Post {...post} />
-                </Grid>
-              ))}
-            </Grid>
+    <Content>
+      <ProfileHeader />
+      <Grid container spacing={2}>
+        <Grid item sm={4}>
+          <Box mb="10px">
+            <AskSomething />
+          </Box>
+          <Box mb="10px">
+            <WhoToFollow />
+          </Box>
+        </Grid>
+        <Grid item sm={8}>
+          <Grid container direction="column" spacing={2}>
+            {posts.map((post, index) => (
+              <Grid key={index} item>
+                <Post {...post} />
+              </Grid>
+            ))}
           </Grid>
         </Grid>
-      </Content>
-    </React.Fragment>
+      </Grid>
+    </Content>
   );
 }
 
