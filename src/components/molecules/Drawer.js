@@ -1,7 +1,7 @@
-import React from 'react';
-import clsx from 'clsx';
-import MuiDrawer from '@material-ui/core/Drawer';
-import { DRAWER } from '../../theme/core';
+import React from "react";
+import clsx from "clsx";
+import MuiDrawer from "@material-ui/core/Drawer";
+import { DRAWER } from "../../theme/core";
 
 const Drawer = ({
   className,
@@ -26,7 +26,7 @@ const Drawer = ({
       subcategoryTextPrimary && DRAWER.subcategoryTextPrimary,
       subcategoryIcon && DRAWER.subcategoryIcon,
       categoryText && DRAWER.categoryText,
-      categoryTextPrimary && DRAWER.categoryTextPrimary,
+      categoryTextPrimary && DRAWER.categoryTextPrimary
     )}
     {...props}
   />

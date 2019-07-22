@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
-import Drawer from "@material-ui/core/Drawer";
 
 import LeftDrawer from "../tweeper/LeftDrawer";
 import atoms from "../atoms";
@@ -9,7 +8,7 @@ import molecules from "../molecules";
 import { CuriousCatSvgIcon } from "./SvgIcons";
 
 const { AppBar, Avatar, Badge, Icon, Toolbar } = atoms;
-const { Tabs, Tab, ListItem, InputAdornment } = molecules;
+const { Tabs, Tab, ListItem, InputAdornment, Drawer } = molecules;
 
 const SmallHeader = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -58,7 +57,7 @@ const SmallHeader = () => {
         </Toolbar>
       </AppBar>
 
-      <Drawer open={isDrawerOpen} onClose={toggleDrawer(false)}>
+      <Drawer categoryText open={isDrawerOpen} onClose={toggleDrawer(false)}>
         {LeftDrawer()}
       </Drawer>
     </Fragment>
