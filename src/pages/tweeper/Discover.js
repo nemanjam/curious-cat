@@ -90,7 +90,7 @@ function Discover() {
               >
                 <TextField
                   id="standard-full-width"
-                  style={{}}
+                  style={{ marginTop: 10 }}
                   placeholder="Username"
                   fullWidth
                   margin="normal"

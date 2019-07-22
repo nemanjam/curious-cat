@@ -159,7 +159,7 @@ function Post({ sharedBy, question, answer }) {
             id="filled-multiline-static"
             label="Ask something"
             multiline
-            rows="3"
+            rows="2"
             placeholder="I want to ask you about..."
             className={classes.textField}
             margin="normal"
