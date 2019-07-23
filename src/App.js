@@ -7,6 +7,7 @@ import Discover from "./pages/tweeper/Discover";
 import Inbox from "./pages/tweeper/Inbox";
 import Notifications from "./pages/tweeper/Notifications";
 import Layout from "./pages/tweeper/Layout";
+import Communities from "./pages/tweeper/Communities";
 
 function App() {
   return (
@@ -20,7 +21,14 @@ function App() {
             </Layout>
           )}
         />
-        <Route path="/communities" render={() => <div>communities</div>} />
+        <Route
+          path="/communities"
+          render={() => (
+            <Layout page="communities">
+              <Communities />
+            </Layout>
+          )}
+        />
         <Route
           path="/profile"
           render={() => (
