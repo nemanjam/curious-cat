@@ -84,7 +84,7 @@ function Post({ sharedBy, question, answer }) {
       )}
       {question && (
         <Box mb="2em">
-          <Grid container spacing={2}>
+          <Grid container spacing={2} wrap="nowrap">
             <Grid item>
               <div className={classes.verticalBar} />
             </Grid>

@@ -14,38 +14,7 @@ import AskSomething from "../../components/tweeper/AskSomething";
 import ProfileHeader from "../../components/tweeper/ProfileHeader";
 import theme from "../../theme/tweeper/theme";
 import withTheme from "./withTheme";
-
-const posts = [
-  {
-    sharedBy: "MyUsername",
-    question: {
-      username: "CuriousCat",
-      time: "10d",
-      text:
-        "Welcome to Curious Cat! We're happy to have you here 😻 Have fun and be nice!"
-    },
-    answer: {
-      avatar:
-        "https://pbs.twimg.com/profile_images/1096807971374448640/rVCDhxkG_200x200.png",
-      username: "MyUsername",
-      time: "11d",
-      text:
-        "In a way CSS is like Redux. You can learn the rules quickly. That may mislead you into thinking. Trade same",
-      likedCount: "5"
-    }
-  },
-  {
-    answer: {
-      avatar:
-        "https://pbs.twimg.com/profile_images/1096807971374448640/rVCDhxkG_200x200.png",
-      username: "MyUsername",
-      time: "11d",
-      text:
-        "In a way CSS is like Redux. You can learn the rules quickly. That may mislead you into thinking. Trade same",
-      likedCount: "5"
-    }
-  }
-];
+import { posts } from "./data";
 
 const Content = styled("div")({
   maxWidth: 1000,
@@ -82,7 +51,7 @@ function Profile() {
         </Grid>
         <Grid item md={8} sm={12} xs={12}>
           <Grid container direction="column" spacing={2}>
-            {posts.map((post, index) => (
+            {posts().map((post, index) => (
               <Grid key={index} item>
                 <Post {...post} />
               </Grid>

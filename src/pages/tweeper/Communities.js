@@ -79,6 +79,9 @@ const useStyles = makeStyles({
   titleBar: {
     background:
       "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)"
+  },
+  icons: {
+    verticalAlign: "middle"
   }
 });
 
@@ -86,8 +89,7 @@ function Communities({ width }) {
   const classes = useStyles();
 
   const getGridListCols = () => {
-    if (isWidthUp("sm", width)) return 1;
-    else return 2;
+    return isWidthUp("sm", width) ? 1 : 2;
   };
 
   return (
@@ -108,16 +110,28 @@ function Communities({ width }) {
             <GridListTile key="Subheader" cols={2} style={{ height: "auto" }}>
               <ListSubheader component="div" style={{ padding: 0 }}>
                 <Paper elevation={0} style={{ borderRadius: 0, padding: 10 }}>
-                  <Grid container justify="space-between" alignContent="center">
-                    <Grid item>
-                      <Icon>search</Icon>
-                      <span>Top Communities</span>
+                  <Grid
+                    wrap="nowrap"
+                    container
+                    justify="space-between"
+                    alignItems="center"
+                  >
+                    <Grid item style={{ whiteSpace: "nowrap" }}>
+                      <Icon className={classes.icons}>keyboard_arrow_up</Icon>
+                      <span
+                        style={{
+                          textOverflow: "ellipsis",
+                          overflow: "hidden"
+                        }}
+                      >
+                        Top Communities
+                      </span>
                     </Grid>
-                    <Grid item>
-                      <Icon>search</Icon>
-                      <Icon>search</Icon>
-                      <Icon>search</Icon>
-                      <Icon>menu</Icon>
+                    <Grid item style={{ whiteSpace: "nowrap" }}>
+                      <Icon className={classes.icons}>search</Icon>
+                      <Icon className={classes.icons}>schedule</Icon>
+                      <Icon className={classes.icons}>toc</Icon>
+                      <Icon className={classes.icons}>menu</Icon>
                     </Grid>
                   </Grid>
                 </Paper>
