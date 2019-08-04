@@ -13,12 +13,12 @@ import atoms from "../atoms";
 
 const useStyles = makeStyles({
   root: {
-    padding: "1rem 10px",
+    padding: "0.5rem 10px",
     flexDirection: "column",
     alignItems: "flex-start",
     backgroundColor: "#fff"
   },
-  button: { marginLeft: "auto", marginTop: "1em" },
+  button: { marginLeft: "auto", marginTop: "0.5rem" },
   rightIcon: { marginLeft: 5 }
 });
 
@@ -43,7 +43,7 @@ function InboxPost({ description, question }) {
           <Grid item>
             <Icon light text>
               brightness_high
-            </Icon>
+            </Icon>{" "}
             <Typography light inline>
               {description}
             </Typography>

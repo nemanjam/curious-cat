@@ -14,7 +14,16 @@ import Options from "../../components/tweeper/Options";
 import ProfileHeader from "../../components/tweeper/ProfileHeader";
 import theme from "../../theme/tweeper/theme";
 import withTheme from "./withTheme";
-import { posts } from "./data";
+import Notification from "../../components/tweeper/Notification";
+
+const posts = [
+  {
+    avatar: "https://cats.curiouscat.me/2018/7/1.jpg",
+    username: "MyUsername",
+    text: "What is your favorite fruit?",
+    time: "11s"
+  }
+];
 
 const Content = styled("div")({
   maxWidth: 1000,
@@ -50,9 +59,9 @@ function Notifications() {
         </Hidden>
         <Grid item md={8} sm={12} xs={12}>
           <Grid container direction="column" spacing={2}>
-            {posts().map((post, index) => (
+            {posts.map((post, index) => (
               <Grid key={index} item>
-                <Post {...post} />
+                <Notification {...post} />
               </Grid>
             ))}
           </Grid>

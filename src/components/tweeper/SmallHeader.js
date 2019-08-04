@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
+import { makeStyles } from "@material-ui/core/styles";
 
 import LeftDrawer from "../tweeper/LeftDrawer";
 import atoms from "../atoms";
@@ -10,7 +11,22 @@ import { CuriousCatSvgIcon } from "./SvgIcons";
 const { AppBar, Avatar, Badge, Icon, Toolbar } = atoms;
 const { Tabs, Tab, ListItem, InputAdornment, Drawer } = molecules;
 
+const drawerWidth = 240;
+
+const useStyles = makeStyles(theme => ({
+  appBar: {
+    zIndex: 2000
+  },
+  drawer: {
+    width: drawerWidth
+  },
+  drawerPaper: {
+    width: drawerWidth
+  }
+}));
+
 const SmallHeader = () => {
+  const classes = useStyles();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawer = open => event => {
@@ -25,7 +41,7 @@ const SmallHeader = () => {
 
   return (
     <Fragment>
-      <AppBar position="sticky">
+      <AppBar position="sticky" className={classes.appBar}>
         <Toolbar>
           <Grid
             container
@@ -57,7 +73,15 @@ const SmallHeader = () => {
         </Toolbar>
       </AppBar>
 
-      <Drawer categoryText open={isDrawerOpen} onClose={toggleDrawer(false)}>
+      <Drawer
+        className={classes.drawer}
+        categoryText
+        open={isDrawerOpen}
+        onClose={toggleDrawer(false)}
+        classes={{
+          paper: classes.drawerPaper
+        }}
+      >
         {LeftDrawer()}
       </Drawer>
     </Fragment>
