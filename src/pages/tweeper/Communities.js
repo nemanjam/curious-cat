@@ -1,6 +1,5 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import { styled } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Paper from "@material-ui/core/Paper";
@@ -15,10 +14,8 @@ import IconButton from "@material-ui/core/IconButton";
 
 import WhoToFollow from "../../components/tweeper/WhoToFollow";
 import Options from "../../components/tweeper/Options";
-import theme from "../../theme/tweeper/theme";
 import atoms from "../../components/atoms";
 import molecules from "../../components/molecules";
-import withTheme from "./withTheme";
 
 const tileData = [
   {
@@ -30,36 +27,33 @@ const tileData = [
   },
   {
     img:
-      "https://aws.curiouscat.me/media/1fdf699f-8a4e-4162-bc9a-1c5b4bda475f.jpg",
-    title: "Question Exchange",
+      "https://aws.curiouscat.me/media/d91000fd-318a-4b9d-8dd3-a89a6f9c8d1f.jpg",
+    title: "Confessions",
     members: "39.79K members",
     posts: "53.25K posts"
   },
   {
     img:
-      "https://aws.curiouscat.me/media/1fdf699f-8a4e-4162-bc9a-1c5b4bda475f.jpg",
-    title: "Question Exchange",
+      "https://aws.curiouscat.me/media/32314557-fb71-4488-b0e1-84d0f2d8eb64.jpg",
+    title: "Music",
     members: "39.79K members",
     posts: "53.25K posts"
   },
   {
-    img:
-      "https://aws.curiouscat.me/media/1fdf699f-8a4e-4162-bc9a-1c5b4bda475f.jpg",
-    title: "Question Exchange",
+    img: "https://curiouscat.me/static/communities_default_cover.jpg",
+    title: "Looking for love ones",
     members: "39.79K members",
     posts: "53.25K posts"
   },
   {
-    img:
-      "https://aws.curiouscat.me/media/1fdf699f-8a4e-4162-bc9a-1c5b4bda475f.jpg",
-    title: "Question Exchange",
+    img: "https://curiouscat.me/static/communities_default_cover.jpg",
+    title: "Looking for love ones",
     members: "39.79K members",
     posts: "53.25K posts"
   },
   {
-    img:
-      "https://aws.curiouscat.me/media/1fdf699f-8a4e-4162-bc9a-1c5b4bda475f.jpg",
-    title: "Question Exchange",
+    img: "https://curiouscat.me/static/communities_default_cover.jpg",
+    title: "Looking for love ones",
     members: "39.79K members",
     posts: "53.25K posts"
   }
@@ -67,12 +61,6 @@ const tileData = [
 
 const { Icon } = atoms;
 const { InputAdornment } = molecules;
-
-const Content = styled("div")({
-  maxWidth: 1000,
-  padding: theme.spacing(4),
-  margin: "auto"
-});
 
 const useStyles = makeStyles({
   title: {},
@@ -93,73 +81,71 @@ function Communities({ width }) {
   };
 
   return (
-    <Content>
-      <Grid container spacing={2}>
-        <Hidden smDown>
-          <Grid item container direction="column" spacing={2} md={4}>
-            <Grid item>
-              <WhoToFollow />
-            </Grid>
-            <Grid item>
-              <Options />
-            </Grid>
+    <Grid container spacing={2}>
+      <Hidden smDown>
+        <Grid item container direction="column" spacing={2} md={4}>
+          <Grid item>
+            <WhoToFollow />
           </Grid>
-        </Hidden>
-        <Grid item md={8} sm={12} xs={12}>
-          <GridList cellHeight={180} className={classes.gridList}>
-            <GridListTile key="Subheader" cols={2} style={{ height: "auto" }}>
-              <ListSubheader component="div" style={{ padding: 0 }}>
-                <Paper elevation={0} style={{ borderRadius: 0, padding: 10 }}>
-                  <Grid
-                    wrap="nowrap"
-                    container
-                    justify="space-between"
-                    alignItems="center"
-                  >
-                    <Grid item style={{ whiteSpace: "nowrap" }}>
-                      <Icon className={classes.icons}>keyboard_arrow_up</Icon>
-                      <span
-                        style={{
-                          textOverflow: "ellipsis",
-                          overflow: "hidden"
-                        }}
-                      >
-                        Top Communities
-                      </span>
-                    </Grid>
-                    <Grid item style={{ whiteSpace: "nowrap" }}>
-                      <Icon className={classes.icons}>search</Icon>
-                      <Icon className={classes.icons}>schedule</Icon>
-                      <Icon className={classes.icons}>toc</Icon>
-                      <Icon className={classes.icons}>menu</Icon>
-                    </Grid>
-                  </Grid>
-                </Paper>
-              </ListSubheader>
-            </GridListTile>
-            {tileData.map(tile => (
-              <GridListTile key={tile.img} cols={getGridListCols()}>
-                <img src={tile.img} alt={tile.title} />
-                <GridListTileBar
-                  title={tile.title}
-                  subtitle={
-                    <Grid container justify="space-between">
-                      <Grid item>{tile.members}</Grid>
-                      <Grid item>{tile.posts}</Grid>
-                    </Grid>
-                  }
-                  classes={{
-                    root: classes.titleBar,
-                    title: classes.title
-                  }}
-                />
-              </GridListTile>
-            ))}
-          </GridList>
+          <Grid item>
+            <Options />
+          </Grid>
         </Grid>
+      </Hidden>
+      <Grid item md={8} sm={12} xs={12}>
+        <GridList cellHeight={180} className={classes.gridList}>
+          <GridListTile key="Subheader" cols={2} style={{ height: "auto" }}>
+            <ListSubheader component="div" style={{ padding: 0 }}>
+              <Paper elevation={0} style={{ borderRadius: 0, padding: 10 }}>
+                <Grid
+                  wrap="nowrap"
+                  container
+                  justify="space-between"
+                  alignItems="center"
+                >
+                  <Grid item style={{ whiteSpace: "nowrap" }}>
+                    <Icon className={classes.icons}>keyboard_arrow_up</Icon>
+                    <span
+                      style={{
+                        textOverflow: "ellipsis",
+                        overflow: "hidden"
+                      }}
+                    >
+                      Top Communities
+                    </span>
+                  </Grid>
+                  <Grid item style={{ whiteSpace: "nowrap" }}>
+                    <Icon className={classes.icons}>search</Icon>
+                    <Icon className={classes.icons}>schedule</Icon>
+                    <Icon className={classes.icons}>toc</Icon>
+                    <Icon className={classes.icons}>menu</Icon>
+                  </Grid>
+                </Grid>
+              </Paper>
+            </ListSubheader>
+          </GridListTile>
+          {tileData.map(tile => (
+            <GridListTile key={tile.img} cols={getGridListCols()}>
+              <img src={tile.img} alt={tile.title} />
+              <GridListTileBar
+                title={tile.title}
+                subtitle={
+                  <Grid container justify="space-between">
+                    <Grid item>{tile.members}</Grid>
+                    <Grid item>{tile.posts}</Grid>
+                  </Grid>
+                }
+                classes={{
+                  root: classes.titleBar,
+                  title: classes.title
+                }}
+              />
+            </GridListTile>
+          ))}
+        </GridList>
       </Grid>
-    </Content>
+    </Grid>
   );
 }
 
-export default withTheme(theme)(withWidth()(Communities));
+export default withWidth()(Communities);
