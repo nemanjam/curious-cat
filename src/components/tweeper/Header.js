@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
+import { makeStyles } from "@material-ui/core/styles";
 
 import atoms from "../atoms";
 import molecules from "../molecules";
@@ -9,7 +10,15 @@ import { CuriousCatSvgIcon } from "./SvgIcons";
 const { AppBar, Avatar, Badge, Icon, Toolbar } = atoms;
 const { Tabs, Tab, ListItem, InputAdornment } = molecules;
 
+const useStyles = makeStyles(theme => ({
+  svgLogo: {
+    color: theme.palette.text.secondary
+  },
+}));
+
 const Header = ({ page }) => {
+  const classes = useStyles();
+
   const pages = [
     "social",
     "discover",
@@ -31,7 +40,7 @@ const Header = ({ page }) => {
               alt="My profile"
               style={{ backgroundColor: "white", marginTop: 9 }}
             >
-              <CuriousCatSvgIcon style={{ color: "#657786" }} />
+              <CuriousCatSvgIcon className={classes.svgLogo} />
             </Avatar>
           </Grid>
           <Grid item sm={10}>

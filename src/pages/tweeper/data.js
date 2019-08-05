@@ -122,10 +122,10 @@ function shuffle(array) {
     array[randomIndex] = temporaryValue;
   }
   const randLength = getRndInteger(1, array.length - 1);
-  console.log(randLength);
+  // console.log(randLength);
 
   array = array.slice(randLength);
-  console.log(array);
+  // console.log(array);
   return array;
 }
 

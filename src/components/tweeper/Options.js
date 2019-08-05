@@ -18,7 +18,7 @@ import {
 
 const { Typography, Icon } = atoms;
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
     padding: 10,
     borderRadius: 0,
@@ -31,9 +31,9 @@ const useStyles = makeStyles({
   svgIcons: {
     width: 14,
     height: 14,
-    color: "#657786"
+    color: theme.palette.text.secondary
   }
-});
+}));
 
 function Options() {
   const classes = useStyles();
