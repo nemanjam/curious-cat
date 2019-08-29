@@ -1,6 +1,6 @@
 # Curious Cat clone
 
-This is UI clone of [curiouscat.me](http://curiouscat.me) website based on the Tweeper template from premium Material-UI themes. This is made in educational purposes only.
+This is UI clone of [curiouscat.me](http://curiouscat.me) website based on the Tweeper template from premium Material-UI themes. It is made for educational purposes only.
 
 ## Demo and Codesandbox
 
@@ -31,4 +31,4 @@ Live **[demo](https://f1u1t.csb.app/)** and **[Codesandbox](https://codesandbox.
 
 ## Installation
   
-This project is made usning `create-react-app` v3 and to run it locally use `git clone` and `npm run start` or fork the **[Codesandbox](https://codesandbox.io/s/github/nemanjam/curious-cat)**.
+This project is made using `create-react-app` v3 and to run it locally use `git clone` and `npm run start` or fork the **[Codesandbox](https://codesandbox.io/s/github/nemanjam/curious-cat)**.
