@@ -17,7 +17,7 @@ Live **[demo](https://f1u1t.csb.app/)** and **[Codesandbox](https://codesandbox.
 * Page elements built with `AskSomething`, `InboxDialog` (modal), `LeftDrawer` (drawer), `Options`, `ProfileHeader` and `WhoToFollow` components
 * `Post`, `InboxPost` nad `Notification` components for post elements
 * Responsive `GridList` component on the `Communities` page built using `withWidth` HOC and `isWidthUp` hook
-* Mocking posts data with `shiffle` function
+* Mocking posts data with `shuffle` function
   
 
 ## Screenshots  
