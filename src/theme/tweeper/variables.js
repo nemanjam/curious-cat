@@ -28,7 +28,8 @@ const theme = createMuiTheme({
     }
   },
   palette: {
-    primary
+    primary,
+    // type: 'dark',
   },
   spacing: 4,
   props: {

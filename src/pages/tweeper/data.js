@@ -9,7 +9,7 @@ let postsArr = [
     },
     answer: {
       avatar:
-        "https://pbs.twimg.com/profile_images/1096807971374448640/rVCDhxkG_200x200.png",
+        "https://randomuser.me/api/portraits/women/1.jpg",
       username: "MyUsername",
       time: "11d",
       text:
@@ -80,7 +80,7 @@ let postsArr = [
   {
     answer: {
       avatar:
-        "https://pbs.twimg.com/profile_images/1096807971374448640/rVCDhxkG_200x200.png",
+        "https://randomuser.me/api/portraits/women/6.jpg",
       username: "MyUsername",
       time: "11d",
       text:
@@ -91,7 +91,7 @@ let postsArr = [
   {
     answer: {
       avatar:
-        "https://pbs.twimg.com/profile_images/1096807971374448640/rVCDhxkG_200x200.png",
+        "https://randomuser.me/api/portraits/women/5.jpg",
       username: "MyUsername",
       time: "11d",
       text:
