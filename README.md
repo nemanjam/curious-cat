@@ -4,7 +4,7 @@ This is UI clone of [curiouscat.me](http://curiouscat.me) website based on the T
 
 ## Demo and Codesandbox
 
-Live **[demo]()** and **[Codesandbox](https://codesandbox.io/s/github/nemanjam/curious-cat)**.
+Live **[demo](https://f1u1t.csb.app/)** and **[Codesandbox](https://codesandbox.io/s/github/nemanjam/curious-cat)**.
 
 ## Features
 
@@ -19,7 +19,7 @@ Live **[demo]()** and **[Codesandbox](https://codesandbox.io/s/github/nemanjam/c
 * Responsive `GridList` component on the `Communities` page built using `withWidth` HOC and `isWidthUp` hook
 * mocking posts data with `shiffle` function
   
-  
+
 ## Screenshots  
 
 ![Screenshot1](/screenshots/Screenshot_1.png)
@@ -31,4 +31,4 @@ Live **[demo]()** and **[Codesandbox](https://codesandbox.io/s/github/nemanjam/c
 
 ## Installation
   
-This project is made with `create-react-app` v3 and to runn it locally use `git clone` and `npm run start` or fork the [Codesandbox]().
+This project is made with `create-react-app` v3 and to runn it locally use `git clone` and `npm run start` or fork the **[Codesandbox](https://codesandbox.io/s/github/nemanjam/curious-cat)**.
